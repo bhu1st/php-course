@@ -1,0 +1,1 @@
+<h2>main content </h2>this is the main area where we display content for different pages

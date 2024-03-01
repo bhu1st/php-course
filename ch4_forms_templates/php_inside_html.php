@@ -1,0 +1,1 @@
+<?php $title = "Most important understanding in PHP - The mixed mode processing!";$body = "<p>yeah we can use PHP wherever we need.";?><html><head><title><?php echo $title; ?></title></head><body><?php echo $body; ?></body></html>

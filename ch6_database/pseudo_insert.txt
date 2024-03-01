@@ -1,0 +1,38 @@
+<?php
+
+//Step 1 Connect to database
+
+$username = "Your MySQL username here";
+
+$password = "Your MySQL password";
+
+$hostname = "Hostname";
+
+$table = "MySQL Table name where the data will be inserted";
+
+$database = "The name of the MySQL database which holds the table";
+
+$dbhandle = mysql_connect($hostname, $username, $password)
+
+or die("Unable to connect to MySQL");
+
+$selected = mysql_select_db($database,$dbhandle)
+
+or die("Could not select $database");
+
+//Step 2. Insert other PHP scripts here (such as grabbing data from HTML forms, etc)
+
+//Step 3. Sanitize variables before inserting to database. This will prevent MySQL injection.
+
+$datatobeinsertedtofieldname1 = mysql_real_escape_string(stripslashes($datatobeinsertedtofieldname1));
+
+$datatobeinsertedtofieldname2 = mysql_real_escape_string(stripslashes($datatobeinsertedtofieldname2));
+
+$datatobeinsertedtofieldname3 = mysql_real_escape_string(stripslashes($datatobeinsertedtofieldname3));
+
+mysql_query("INSERT INTO `tablename` (`fieldname1`,`fieldname2`,``,`fieldname3`) VALUES('$datatobeinsertedtofieldname1','$datatobeinsertedtofieldname2',
+'$datatobeinsertedtofieldname3')")
+
+or die(mysql_error());
+
+?>

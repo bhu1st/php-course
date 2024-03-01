@@ -1,0 +1,1 @@
+<!--This file is navigation link. Please run blog.php which includes this file--><a href="blog.php">Home</a><br/><a href="http://google.com">google</a><br/><a href="http://facebook.com">facebook</a><br/>

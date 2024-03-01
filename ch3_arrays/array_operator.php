@@ -1,0 +1,1 @@
+<?php	$array[] = "Hello";    $array[] = "Hi";    $array[] = "Bye";		echo "<pre>";    print_r($array);	echo "</pre>";		$array["a"] = "Hello";    $array["b"] = "Hi";    $array["c"] = "Bye";		echo "<pre>";    print_r($array);	echo "</pre>";		

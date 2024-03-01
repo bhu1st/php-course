@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>{title}</title>
+
+{meta}
+
+
+<style type="text/css">
+body{
+text-align:center;
+}
+
+h1{
+color:#900;
+margin:10px;
+}
+
+h2{
+color:#333;
+}
+
+#wrapper {
+width:960px;
+margin:0 auto;
+}
+
+#header {
+height:40px;
+border:1px solid #bbb;
+margin-bottom: 10px;
+line-height:40px;
+}
+
+#content_wrapper {
+width:auto;
+}
+
+#left_sidebar {
+width:200px;
+height:300px;
+float:left;
+border:1px solid #bbb;
+padding:10px;
+
+}
+
+#content{
+width:440px;
+height:300px;
+float:left;
+border:1px solid #bbb;
+margin-left:10px;
+padding:10px;
+}
+
+#right_sidebar {
+width:200px;
+height:300px;
+float:left;
+border:1px solid #bbb;
+margin-left:10px;
+padding:10px;
+}
+
+.clear {
+float:none;
+clear:both;
+}
+
+#footer {
+margin-top:10px;
+height:20px;
+border:1px solid #bbb;
+font-size:10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+		<h3>{title}</h3>
+		<div id="header">			
+			{navbar}
+			
+		</div>
+
+		<div id="content_wrapper">
+
+			<div id="left_sidebar">
+			 {leftcontent}
+			</div>
+			
+			<div id="content">
+				{maincontent}
+			</div>
+			
+			<div id="right_sidebar">
+			 {rightcontent}
+			</div>
+			
+		</div>
+
+		<div class="clear"></div>
+		
+		<div id ="footer">			
+			{footer}
+		</div>
+
+</div>
+
+
+
+
+</body>
+</html>
