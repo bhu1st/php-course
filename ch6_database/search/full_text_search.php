@@ -1,15 +1,12 @@
 <?php 
 
-   //Full Text Search Functions : http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html
+   //Refer to : https://www.geeksforgeeks.org/mysql-full-text-search/
    
-   //Also refer : http://www.mysqlfulltextsearch.com
-   
-   mysql_connect("hostname", "username", "password"); 
-    mysql_select_db("our_db"); 
+    $conn=mysqli_connect("hostname", "username", "password","our_db"); 
     $query = " 
         SELECT * FROM articles 
         WHERE MATCH(title, body) AGAINST ('PHP') 
     "; 
-    $sql = mysql_query($query); 
+    $sql = mysqli_query($conn,$query); 
     /* output results */ 
 ?>

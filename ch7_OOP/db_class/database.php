@@ -8,14 +8,13 @@ class Database
 	  
 	  function connect_db()
 	  {
-	    $this->con  =  mysql_connect(HOST,USER,PASS) or die("Failed connecting to mysql server".mysql_error());
-		mysql_select_db(DATABASE) or die("Failed connecting to Database".mysql_error());
+	    $this->con  =  mysqli_connect(HOST,USER,PASS,DATABASE) or die("Failed connecting to mysql server".mysqli_connect_error());
 		return $this->con;
 	  }
 	  
 	  function exec($sql)
 	  {
-	  $result   =   mysql_query($sql) or die("Wrong Query".mysql_error());
+	  $result   =   mysqli_query($this->con,$sql) or die("Wrong Query".mysqli_error($this->con));
 	  if($result)
 	    {
 		return $result;
@@ -28,29 +27,29 @@ class Database
 	  
 	  function fetch_array($rs)
 	  {
-	  return mysql_fetch_array($rs);
+	  return mysqli_fetch_array($rs);
 	  }
 	  function fetch_assoc($rs)
 	  {
-	  return mysql_fetch_assoc($rs);
+	  return mysqli_fetch_assoc($rs);
 	  }
 	  function fetch_object($rs)
 	  {
-	  return mysql_fetch_object($rs);
+	  return mysqli_fetch_object($rs);
 	  }
 	  function fetch_row($rs)
 	  {
-	  return mysql_fetch_row($rs);
+	  return mysqli_fetch_row($rs);
 	  }
 	  
 	  function rows_id()
 	  {
-	  return mysql_insert_id();
+	  return mysqli_insert_id($this->con);
 	  }
 	  
 	  function total_rows($rs)
 	  {
-	  return mysql_num_rows($rs);
+	  return mysqli_num_rows($rs);
 	  }
 	  
 	  function insert()
