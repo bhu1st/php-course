@@ -1,13 +1,12 @@
 <?php
     
-	mysql_connect("localhost", "root", "");
-    mysql_select_db("semicolondb");
+	$conn=mysqli_connect("localhost", "root", "","semicolondb");
 	
-    $result = mysql_query("SELECT * FROM users");
+    $result = mysqli_query($conn,"SELECT * FROM users");
 
-    if (mysql_num_rows($result)) {       
+    if (mysqli_num_rows($result)) {       
         
-        while ($row = mysql_fetch_assoc($result)) { 
+        while ($row = mysqli_fetch_assoc($result)) { 
 /*
 mysql_fetch_assoc() takes one row from a MySQL result, 
 and converts it to an associative array with each field name as a key 
